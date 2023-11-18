@@ -1,22 +1,22 @@
 import React from "react";
 import Panel from "../Panel";
 
-const fakeRecipes = [
-  {id: 1, name: "Pomidorowa"},
-  {id: 2, name: "Kurczak curry"},
-  {id: 3, name: "Sajgonki"},
-  {id: 4, name: "Hamburger"},
-  {id: 5, name: "Schabowy z ziemniakami"}
-];
+const LastRecipes = ({ recipes }) => {
+  let lastFive = [];
+  if (recipes.length > 4) {
+    lastFive = recipes.slice(recipes.length - 5, recipes.length);
+  } else {
+    lastFive = recipes.slice(0, recipes.length);
+  }
 
-const LastRecipes = () => {
   return (
     <Panel
       title="Ostatnie przepisy"
       theme="is-primary"
       path="recipes"
       iconName="folder"
-      listElements={fakeRecipes} />
+      listElements={lastFive}
+    />
   );
 };
 

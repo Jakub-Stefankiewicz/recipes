@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import AllProducts from "../components/Products";
+import LastProducts from "../components/Home/LastProducts"
 
 const mapStateToProps = (state) => {
   return {
@@ -7,4 +8,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(AllProducts);
+export default connect(mapStateToProps)(AllProducts, LastProducts);

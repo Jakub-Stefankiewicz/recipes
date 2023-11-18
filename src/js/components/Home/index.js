@@ -1,6 +1,6 @@
 import React from "react";
-import LastRecipes from "./LastRecipes";
-import LastProducts from "./LastProducts";
+import LastRecipes from "../../containers/LastRecipes";
+import LastProducts from "../../containers/LastProducts";
 
 const Home = () => {
   return (

@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Panel from "../Panel";
 
-const fakeProducts = [
-  {id: 1, name: "Pomidory"},
-  {id: 2, name: "Przyprawa curry"},
-  {id: 3, name: "Olej"},
-  {id: 4, name: "Wołowina 500g"},
-  {id: 5, name: "Ziemniaki"}
-];
+const LastProducts = ({ products }) => {
 
-const LastProducts = () => {
+  let lastFive = [];
+  if (products.length > 4) {
+    lastFive = products.slice(products.length - 5, products.length);
+  } else {
+    lastFive = products.slice(0, products.length);
+  }
+
   return (
     <Panel
       title="Ostatnie produkty"
       theme="is-danger"
       path="products"
       iconName="pizza-slice"
-      listElements={fakeProducts} />
+      listElements={lastFive}
+    />
   );
 };
 
