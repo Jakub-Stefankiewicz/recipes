@@ -15,7 +15,7 @@ class AddProduct extends Component {
     e.preventDefault();
     console.log(this.state);
     this.props.addProduct(this.state.name);
-    this.setState({name: ""});
+    this.setState({ name: "" });
     console.log("Test");
   };
 

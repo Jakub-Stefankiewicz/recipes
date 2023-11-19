@@ -6,13 +6,12 @@ const Home = () => {
   return (
     <div className="columns">
       <div className="column is-one-third">
-        <LastRecipes/>
+        <LastRecipes />
       </div>
       <div className="column is-one-third">
-        <LastProducts/>
+        <LastProducts />
       </div>
     </div>
-
   );
 };
 

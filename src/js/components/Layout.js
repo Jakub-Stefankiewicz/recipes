@@ -1,11 +1,11 @@
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const styles = {
     main: {
-      marginTop: "3rem"
-    }
+      marginTop: "3rem",
+    },
   };
 
   return (
@@ -17,15 +17,15 @@ const Layout = ({children}) => {
           </div>
           <div className="navbar-menu">
             <div className="navbar-start">
-            <NavLink to="/recipes" className="navbar-item" activeClassName="is-active">
+              <NavLink to="/recipes" className="navbar-item">
                 <span className="icon has-text-primary">
-                  <i className="fas fa-folder"/>
+                  <i className="fas fa-folder" />
                 </span>
                 <span>Przepisy</span>
               </NavLink>
-              <NavLink to="/products" className="navbar-item" activeClassName="is-active">
+              <NavLink to="/products" className="navbar-item">
                 <span className="icon has-text-danger">
-                  <i className="fas fa-pizza-slice"/>
+                  <i className="fas fa-pizza-slice" />
                 </span>
                 <span>Produkty</span>
               </NavLink>
@@ -37,27 +37,72 @@ const Layout = ({children}) => {
       <main className="container" style={styles.main}>
         <div className="columns">
           <div className="column is-one-fifth">
-          <aside className="menu" style={{marginRight: "4rem", marginTop: "1rem"}}>
-            <p className="menu-label">
-              Podstrony
-            </p>
-            <ul className="menu-list">
-              <li><NavLink to={"/"} activeClassName={"is-active"}>Strona główna</NavLink></li>
-              <li><NavLink to={"/recipes"} activeClassName={"is-active"}>Przepisy</NavLink></li>
-              <li><NavLink to={"/products"} activeClassName={"is-active"}>Produkty</NavLink></li>
-            </ul>
-            <p className="menu-label">
-              Akcje
-            </p>
-            <ul className="menu-list">
-              <li><NavLink to={"/recipes/add"} activeClassName={"is-active"}>Dodaj Przepis</NavLink></li>
-              <li><NavLink to={"/products/add"} activeClassName={"is-active"}>Dodaj Produkt</NavLink></li>
-            </ul>
-          </aside>
+            <aside
+              className="menu"
+              style={{ marginRight: "4rem", marginTop: "1rem" }}
+            >
+              <p className="menu-label">Podstrony</p>
+              <ul className="menu-list">
+                <li>
+                  <NavLink
+                    end
+                    to={"/"}
+                    className={({ isActive }) =>
+                      isActive ? "is-active" : undefined
+                    }
+                  >
+                    Strona główna
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    end
+                    to={"/recipes"}
+                    className={({ isActive }) =>
+                      isActive ? "is-active" : undefined
+                    }
+                  >
+                    Przepisy
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    end
+                    to={"/products"}
+                    className={({ isActive }) =>
+                      isActive ? "is-active" : undefined
+                    }
+                  >
+                    Produkty
+                  </NavLink>
+                </li>
+              </ul>
+              <p className="menu-label">Akcje</p>
+              <ul className="menu-list">
+                <li>
+                  <NavLink
+                    to={"/recipes/add"}
+                    className={({ isActive }) =>
+                      isActive ? "is-active" : undefined
+                    }
+                  >
+                    Dodaj Przepis
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/products/add"}
+                    className={({ isActive }) =>
+                      isActive ? "is-active" : undefined
+                    }
+                  >
+                    Dodaj Produkt
+                  </NavLink>
+                </li>
+              </ul>
+            </aside>
           </div>
-          <div className="column is-four-fifths">
-            {children}
-          </div>
+          <div className="column is-four-fifths">{children}</div>
         </div>
       </main>
     </>

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import LastRecipes from "../components/Home/LastRecipes"
+import LastRecipes from "../components/Home/LastRecipes";
 
 const mapStateToProps = (state) => {
   return {

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import LastProducts from "../components/Home/LastProducts"
+import LastProducts from "../components/Home/LastProducts";
 
 const mapStateToProps = (state) => {
   return {

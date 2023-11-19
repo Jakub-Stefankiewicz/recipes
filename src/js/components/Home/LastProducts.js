@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Panel from "../Panel";
 
 const LastProducts = ({ products }) => {
-
   let lastFive = [];
   if (products.length > 4) {
     lastFive = products.slice(products.length - 5, products.length);
