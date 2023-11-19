@@ -14,6 +14,9 @@ class AddProduct extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    this.props.addProduct(this.state.name);
+    this.setState({name: ""});
+    console.log("Test");
   };
 
   render() {
@@ -32,6 +35,7 @@ class AddProduct extends Component {
                   id="name"
                   placeholder="Nazwa produktu"
                   onChange={this.handleChange}
+                  value={this.state.name}
                 />
               </div>
             </div>

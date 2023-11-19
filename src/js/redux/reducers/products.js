@@ -16,7 +16,9 @@ const initialState = [
 const products = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_PRODUCT:
-      return [...state, payload];
+      return [...state, {
+        id: state[state.length-1].id+1,
+        name: payload}];
     default:
       return state;
   }

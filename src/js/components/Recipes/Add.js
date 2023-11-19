@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import SingleProduct from "./SingleProduct";
 
-
 class AddRecipe extends Component {
   state = {
     name: "",
+    desc: "",
     products: [{key: 0}],
     lastKey: 0
   };
@@ -18,6 +18,8 @@ class AddRecipe extends Component {
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
+    console.log(typeof this.props.addRecipe)
+    this.props.addRecipe(this.state);
   };
 
   handleAddProduct = () => {
@@ -82,7 +84,9 @@ class AddRecipe extends Component {
               index={product.key}
               number={i}
               onChange={this.handleProductChoose}
-              onClose={this.handleProductDelete}/>
+              onClose={this.handleProductDelete}
+              products={this.props.products}
+            />
           ))}
 
           <div className="field">
